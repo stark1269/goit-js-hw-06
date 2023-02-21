@@ -10,13 +10,12 @@ function formSubmit(event) {
   const email = formEl.email.value;
   const password = formEl.password.value;
 
-  if (email == '' || password == '') {
+  if (!email.length || !password.length) {
     alert('Заполните все поля для ввода!');
     return
-  } else
-    formObj = {
-      email,
-      password,
+  } formObj = {
+    email,
+    password,
     };
   document.querySelector('.login-form').reset();
   console.log(formObj);
